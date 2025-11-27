@@ -1,0 +1,45 @@
+c languges : procedure 
+
+c++ ==> object oriented 
+
+====================
+
+#include<conio.h>
+#include<stdio.h>
+void main()
+{
+    printf(); 
+    getch(); 
+}
+
+=====================
+
+#include<iostream>  ==> cin ,cout 
+
+cout
+cin 
+
+===================== 
+
+#include<iostream>
+int main()
+{
+    std :: cout<<"hello";
+    std :: cout<<"yug";
+
+    return 0; 
+}
+std ===>standard header file  ::scope / ref 
+
+======================
+
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a;
+    cout<<"hello";
+    cout<<"yug";
+    cin>>a
+}
+
