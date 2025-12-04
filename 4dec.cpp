@@ -63,6 +63,22 @@ int main()
     
     s1.rollno=2; 
     s1.name ="chahat";
+    cout<<"rollno :"<<s1.rollno<<"\n";
+    cout<<"name :"<<s1.name<<endl;
+    
     s1.display();
     return 0; 
 }
+
+/*
+HW  : 
+switch  : 
+    1. addition  
+    2. sub 
+    3. div 
+    4. mod 
+    5. mul 
+    6. rev 
+
+
+*/
