@@ -26,6 +26,7 @@ class  name
 };
 */
 
+// public class member : 
 #include <iostream>
 using namespace std;
 class student 
@@ -33,6 +34,14 @@ class student
     public : 
         int rollno=1; // rollno  , name  ===>  class member  ==> public 
         string name="saumya"; 
+
+    // void  input()
+    // {
+    //     cout<<"enter rollno :";
+    //     cin>>rollno;
+    //     cout<<"enter name :";
+    //     cin>>name;
+    // }
     
     void  display()
     {
@@ -45,6 +54,15 @@ int main()
     student s1;   // s1  object  ===> student  class 
     //cout<<"rollno :"<<s1.rollno<<"\n";
     //cout<<"name :"<<s1.name<<endl;
+    // s1.input(); 
+
+    // cout<<"enter the  rollno :"; 
+    // cin>>s1.rollno; 
+    // cout<<"enter the  name :"; 
+    // cin>>s1.name; 
+    
+    s1.rollno=2; 
+    s1.name ="chahat";
     s1.display();
     return 0; 
 }
