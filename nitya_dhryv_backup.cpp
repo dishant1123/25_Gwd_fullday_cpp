@@ -38,7 +38,7 @@ int main()
 */ 
 
 // private  : 
-
+/*
 #include <iostream>
 using namespace std;
 class student 
@@ -60,5 +60,121 @@ int main()
     // cout<<"rollno is  : "<<s1.rollno<<endl;
     // cout<<"name is  : "<<s1.name<<endl; // bcz of  private  you can't access outside the class . 
     s1.show(); 
+    return 0; 
+}
+*/ 
+
+/*
+constructor  : 
+
+1. automatically called  when  obj is  created . 
+2. return  void  no. 
+class name = constructor  name same. 
+*/
+/*
+#include<iostream>
+using namespace std;
+class person 
+{
+    public : 
+        person()
+        {
+            cout<<"constructor called"<<endl;
+            cout<<"my name is ram";
+        }
+};
+int main()
+{
+    person p1;
+    return 0; 
+}
+*/ 
+
+// non parameterized constructor
+/*
+#include<iostream>
+using namespace std;
+class person 
+{
+    private : 
+        int rollno; 
+        string name;
+    public : 
+        person()
+        {
+            rollno =1; 
+            name ="nitya";
+            cout<<"constructor called"<<endl;
+        }
+        void  show()
+        {
+            cout<<"rollno is  : "<<rollno<<endl;
+            cout<<"name is  : "<<name<<endl;
+        }
+};
+int main()
+{
+    person p1; 
+    p1.show();
+    return 0; 
+}
+*/
+// parameterized constructor
+/*
+#include<iostream>
+using namespace std;
+class person 
+{
+    private : 
+        int rollno; 
+        string name;
+    public : 
+        person(int  r, string  n)
+        {
+            rollno =r; 
+            name =n;
+            cout<<"parameterized constructor called"<<endl;
+        }
+        void  show()
+        {
+            cout<<"rollno is  : "<<rollno<<endl;
+            cout<<"name is  : "<<name<<endl;
+        }
+};
+int main()
+{
+    person p1(1,"nitya");
+    person p2(2,"dhruv");
+    p1.show();
+    p2.show();
+    return 0; 
+}
+*/ 
+// copy  constructor  : 
+#include<iostream>
+using namespace std;
+class person 
+{
+    public  : 
+        int rollno; 
+        string name; 
+    person(int r, string n)
+        {
+            rollno =r; 
+            name =n;
+        }
+    person(person &p1)
+    {
+        rollno =p1.rollno; 
+        name =p1.name;
+        cout<<"copy constructor called"<<endl;
+        cout<<"rollno is  : "<<rollno<<endl;
+        cout<<"name is  : "<<name<<endl;
+    }
+};
+int main()
+{
+    person p1(1,"nitya");
+    person p2(p1);
     return 0; 
 }
