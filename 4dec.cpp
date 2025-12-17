@@ -79,6 +79,4 @@ switch  :
     4. mod 
     5. mul 
     6. rev 
-
-
 */
