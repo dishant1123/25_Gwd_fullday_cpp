@@ -49,7 +49,7 @@ class b : public a
 */
 
 // single  inheritance :
-
+/*
 #include<iostream>
 using namespace std;
 class a
@@ -79,3 +79,34 @@ int main()
     // b1.display();
     return 0; 
 } 
+*/
+
+// protected  :
+
+#include<iostream>
+using namespace std;
+class student 
+{
+    protected :
+        int  money; 
+    public :
+        student()
+        {
+            money =1000; 
+        }
+};
+class person :public student
+{
+    public :
+        void show()
+        {
+            money =9000;
+            cout<<"money is :"<<money<<endl;
+        }
+};
+int main()
+{
+    person p1; 
+    p1.show();
+    return 0; 
+}
