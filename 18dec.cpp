@@ -110,3 +110,38 @@ int main()
     p1.show();
     return 0; 
 }
+
+/*
+hw : 
+
+Write a C++ program to check whether a given number is a Happy Number or not.
+A number is called Happy if the repeated sum of the squares of its digits eventually becomes 1.
+If it enters a loop and never reaches 1, it is an Unhappy Number.
+
+Example:
+
+Input: 19
+Process:
+1² + 9² = 1 + 81 = 82
+8² + 2² = 64 + 4 = 68
+6² + 8² = 36 + 64 = 100
+1² + 0² + 0² = 1 → Happy Number
+
+Example:
+
+Input: 4
+Process (loops between numbers): 4 → 16 → 37 → 58 → … → 4
+Never reaches 1 → Unhappy Number ... 
+
+
+task :2 
+*                 * 
+* *             * * 
+* * *         * * *
+* * * *     * * * * 
+* * * * * * * * * *
+* * * *     * * * *  
+* * *         * * * 
+* *             * *
+*                 *
+*/
