@@ -116,7 +116,7 @@ int main()
 */ 
 
 // this  ==> operator  ==< cuurent  object refers . 
-
+/*
 #include<iostream>
 using namespace std;
 class student 
@@ -138,3 +138,124 @@ int main()
     cout<<s1.age<<endl;
     return 0; 
 }
+*/ 
+/*
+#include <iostream>
+using namespace std;
+class Test {
+public:
+    int x;
+    Test() {
+        x = 0;
+    }
+};
+class Derived_Test : public Test {
+public:
+    int y;
+    Derived_Test() {
+        y = 1;
+    }
+};
+int main() {
+    Derived_Test b;
+    cout << b.x << " " << b.y;
+    return 0;
+}
+*/ 
+/*
+option  : 
+
+a. 0 1 
+b. 1 0 
+c. Error because class B inherits A but variable x 
+isn’t inherited. 
+d. Error because when object is created, 
+argument must be passed like 
+Derived_Test(1)
+*/
+/*
+#include <iostream>
+using namespace std;
+class A {
+public:
+    int x;
+    A(int x) {
+        this->x = x;
+    }
+    void count(int x) {   // not used
+        this->x = this->x + 1;
+    }
+};
+class B : public A {
+public:
+    int y;
+    B(int y = 0) : A(3) {   // calling base class constructor
+        this->y = y;
+    }
+    void count() {         // function hiding (like Python)
+        y = y + 1;
+    }
+};
+int main() {
+    B obj;
+    obj.count();
+    cout << obj.x << " " << obj.y;
+    return 0;
+}
+    */ 
+/*
+option  : 
+a. 3 0 
+b. 3 1 
+c. 0 1 
+d. 1 0 
+
+*/
+/*
+#include <iostream>
+#include <string>
+using namespace std;
+class People {
+public:
+    string name;
+    // Constructor
+    People(string name) {
+        this->name = name;
+    }
+    // Member function
+    void namePrint() {
+        cout << name << endl;
+    }
+};
+int main() {
+    People person1("Sally");
+    People person2("Louise");
+    person1.namePrint();   
+    return 0;
+}
+*/ 
+#include <iostream>
+using namespace std;
+class Demo {
+public:
+    int x;
+    Demo() {
+        x = 1;
+    }
+    void change() {
+        x = 10;
+    }
+};
+class Demo_derived : public Demo {
+public:
+    int change() {         
+        x = x + 1;
+        return x;
+    }
+};
+int main() {
+    Demo_derived obj;
+    cout << obj.change();
+    return 0;
+}
+// h 11  o 11    v error   d 2    n 2   v2   h 11   p 2    s  11  sh error 
