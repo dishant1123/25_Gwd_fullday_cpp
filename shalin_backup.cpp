@@ -84,7 +84,7 @@ class type  :
 2. private : within class only
 3. protected : inherit class only
 */
-
+/*
 #include <iostream>
 using namespace std;
 class student
@@ -123,4 +123,69 @@ int main()
     s1.rollno=3;
     s1.show();
     return 0; 
+}
+*/
+
+// private  : 
+/*
+#include <iostream>
+using namespace std;
+class employees 
+{
+    private :
+        int id=1; 
+        string name="ram";
+    public :
+    void show()
+    {
+        id =2;
+        name="shalin";
+        cout<<"id is  :"<<id<<endl;
+        cout<<"name is  :"<<name<<endl;
+    }
+};
+int main()
+{
+    employees e1; 
+    // cout<<"id is  :"<<e1.id<<endl; // error  ==> bcz private  
+    e1.show();
+  
+    return 0;
+}
+    */
+
+// using  array  : 
+
+#include <iostream>
+using namespace std;
+class student 
+{
+    public :
+        int  rollno[3]; 
+        string name[3];
+    void input()
+    {
+        for(int i=0;i<3;i++)
+        {
+            cout<<"enter the  rollno : ";
+            cin>>rollno[i]; 
+            cout<<"enter the  name : ";
+            cin>>name[i];
+        }
+    }
+    void  show()
+    {
+        for(int i=0;i<3;i++)
+        {
+            cout<<"rollno is  :"<<rollno[i]<<endl;
+            cout<<"name is  :"<<name[i]<<endl;
+        }
+    }
+};
+int main()
+{
+    student s1; 
+    s1.input();
+    s1.show();
+    return 0;
 }
