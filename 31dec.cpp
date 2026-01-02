@@ -18,7 +18,7 @@ class a :
 class b : public a 
 class c : public b
 */
-
+/*
 #include <iostream>
 using namespace std;
 class vehicle 
@@ -74,7 +74,7 @@ int main()
     c1.show();
     return 0; 
 }
-
+*/ 
 /*
 Question (C++ – Inheritance and Method Extension)
 
@@ -110,3 +110,67 @@ class textbook : public book
         book ::display(); 
         cout<<"course is : "<<course<<endl;
 */
+
+#include <iostream>
+#include <string>
+using  namespace std;
+class book 
+{
+    protected : 
+        string name; 
+        int n; 
+        string authors[10];
+        string publisher;
+        string ISBN;
+        int year; 
+    public : 
+        book(string name , int n , string authors[] , string publisher , string ISBN , int year) 
+        {
+            this->name =name; 
+            this->n=n; 
+            for(int i=0; i<n; i++)
+            {
+                this->authors[i]=authors[i];
+            }
+            this->publisher=publisher;
+            this->ISBN=ISBN;
+            this->year=year;
+        }
+        void  display()
+        {
+            cout<<"Book name :"<<name<<endl;
+            cout<<"publisher :"<<publisher<<endl;
+            cout<<"ISBN :"<<ISBN<<endl;
+            cout<<"year :"<<year<<endl;
+            cout<<"number of authors :"<<n<<endl;
+            for(int i=0; i<n; i++)
+            {
+                cout<<"author :"<<authors[i]<<endl;
+            }
+            cout<<endl;
+        }
+};
+class textbook : public book 
+{
+    string  course; 
+    public : 
+        textbook(string name , int n , string authors[] , string publisher , string ISBN , int year,string course) : book(name,n,authors,publisher,ISBN,year) // base class constructor called 
+        {
+            this->course=course;
+        } 
+        void  display()
+        {
+            book ::display(); 
+            cout<<"course is : "<<course<<endl;
+        }  
+};
+
+int main()
+{
+    string authors[2]={"purva","het"}; 
+
+    textbook t1("balaguru",2,authors,"guru","bg12345",2020,"java"); 
+    t1.display();
+    return 0; 
+
+}
