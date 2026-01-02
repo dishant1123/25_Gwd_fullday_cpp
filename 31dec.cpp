@@ -74,3 +74,39 @@ int main()
     c1.show();
     return 0; 
 }
+
+/*
+Question (C++ – Inheritance and Method Extension)
+
+Implement an inheritance hierarcy in C++ as follows:
+Create a base class named Book having the following data members:
+    name – name of the book
+    n – number of authors
+    authors – list of authors   ==> array 
+    publisher – name of the publisher
+    ISBN – ISBN number of the book
+    year – year of publication
+
+The Book class should contain:
+    A constructor to initialize all data members
+    A member function display() to display book details
+
+Create a derived class named TextBook which:
+
+    Inherits from the Book class
+    Has an additional data member course
+The TextBook class should:
+    Extend the functionality of the base class by defining its own display() method
+
+Display all the book details along with the course name
+
+
+hint  : 
+
+class book  
+    void  display()
+class textbook : public book 
+    void  display()
+        book ::display(); 
+        cout<<"course is : "<<course<<endl;
+*/
