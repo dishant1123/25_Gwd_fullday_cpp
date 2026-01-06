@@ -219,7 +219,7 @@ int main()
 */
 
 // using  function : 
-
+/*
 #include <iostream>
 using namespace std;
 class student 
@@ -265,4 +265,55 @@ int main()
         s[i].display(); 
     }
     return 0;
+}
+*/ 
+
+// using private  : 
+
+#include <iostream>
+using namespace std;
+class student 
+{
+    private :
+        int rollno;
+        string name; 
+        int age;
+    public :
+        student()
+        {
+            rollno =0; 
+            name="";
+            age =0; 
+        }
+    void input()
+    {
+        cout<<"enter the rollno : "<<endl;
+        cin>>rollno; 
+        cout<<"enter the name : "<<endl;
+        cin>>name; 
+        cout<<"enter the age : "<<endl;
+        cin>>age; 
+    }
+    void display()
+    {
+        cout<<"rollno   : "<<rollno<<endl;
+        cout<<"name     : "<<name<<endl;
+        cout<<"age      : "<<age<<endl;
+    }
+
+};
+int main()
+{
+    student s[2]; 
+    cout<<"enter the  student information"<<endl;
+    for(int i=0; i<2; i++)
+    {
+        s[i].input();
+    }
+    cout<<"students  information display"<<endl;
+    for(int i=0; i<2; i++)
+    {
+        s[i].display();
+    }
+    return 0; 
 }
