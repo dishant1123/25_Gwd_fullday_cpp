@@ -149,10 +149,10 @@ Implement the following class hierarchy in C++:
 
 Create a base class named Staff having the following data members:
     name (string)
-    salary (float or int)
+    salary (float or int)   ==> input()  , show()
 
 Create a derived class named Teaching that inherits from Staff and has:
-    subject (string) as its data member
+    subject (string) as its data member    staff ::show()
 
 Create another derived class named NonTeaching that inherits from Staff and has:
     department (string) as its data member
