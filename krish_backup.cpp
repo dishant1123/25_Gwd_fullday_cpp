@@ -131,6 +131,7 @@ int main()
 */
 
 // ex:4 
+/*
 #include <iostream>
 using namespace std;
 class student // name  == > student 
@@ -156,4 +157,30 @@ int main()
     cout<<"after update  : "<<endl;
     s1.show();
     return 0; 
+}
+*/ 
+
+// private : 
+
+#include <iostream>
+using namespace std;
+class student 
+{
+    private :
+        int id=1; 
+        string name="krish" ;
+    public :
+        void show()
+        {
+            cout<<"id is  : "<<id<<endl;
+            cout<<"name is  : "<<name<<endl;
+        }
+};
+int main()
+{
+    student s1; 
+    // cout<<"id is  : "<<s1.id<<endl; // not accessible bcz of  private  
+    // cout<<"name is  : "<<s1.name<<endl;
+    s1.show(); 
+    return 0;
 }
