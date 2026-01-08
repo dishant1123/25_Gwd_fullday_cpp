@@ -143,3 +143,27 @@ int main()
     i1.display();
     return 0; 
 }
+
+/*
+Implement the following class hierarchy in C++:
+
+Create a base class named Staff having the following data members:
+    name (string)
+    salary (float or int)
+
+Create a derived class named Teaching that inherits from Staff and has:
+    subject (string) as its data member
+
+Create another derived class named NonTeaching that inherits from Staff and has:
+    department (string) as its data member
+
+The base class Staff should have member functions to:
+    Accept staff details
+    Display staff details
+
+The derived classes Teaching and NonTeaching should override (extend) the display method of the base class to include their respective data members.
+
+Write a main() function to:
+Create objects of Teaching and NonTeaching
+Demonstrate inheritance and method overriding
+*/
