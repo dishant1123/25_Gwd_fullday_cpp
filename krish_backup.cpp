@@ -186,7 +186,9 @@ int main()
 }
 */
 
-// 
+//
+/*
+ 
 #include <iostream>
 using namespace std;
 class student 
@@ -215,4 +217,114 @@ int main()
     s1.input();
     s1.show();
     return 0;
+}
+*/ 
+
+// constructor : 
+/*
+1. automatically called when object is created
+2. used to initialize data members
+3. can't return any value 
+
+type  : 
+
+1.default constructor :
+2.parameterized constructor :
+3.non parameterized constructor :
+4.copy constructor :
+5.constructor overloading:
+
+rule : 
+1. class name same as  constructor name. 
+*/
+
+// default constructor :
+/*
+#include <iostream>
+using namespace std;
+class student
+{
+    public : 
+        student() // constructor 
+        {
+            cout<<"default constructor called"<<endl;
+            cout<<"my name is  krish."<<endl;
+        }
+};
+int main()
+{
+    student s1;
+    return 0; 
+}
+*/
+
+// non parameterized constructor :
+/*
+
+#include <iostream>
+using namespace std;
+class student
+{
+    public :
+        string name="krish"; 
+        int age=21;
+        student() // constructor 
+        {
+            // name ="krish";
+            // age =20;    
+            cout<<"default constructor called"<<endl;
+            cout<<"my name is  krish."<<endl;
+        }
+        void show()
+        {
+            cout<<"name is  : "<<name<<endl;
+            cout<<"age is  : "<<age<<endl;
+        }
+};
+int main()
+{
+    student s1;
+    s1.show();
+    cout<<"name is  : "<<s1.name<<endl;
+    cout<<"age is  : "<<s1.age<<endl;
+    s1.name ="sita";
+    s1.age =25;
+    s1.show();
+    return 0; 
+}
+*/ 
+// parameterized constructor :
+
+
+#include <iostream>
+using namespace std;
+class student
+{
+    public :
+        string name; 
+        int age;
+        student(string n , int a) // constructor 
+        {
+            name =n; 
+            age=a;
+        }
+        void show()
+        {
+            cout<<"name is  : "<<name<<endl;
+            cout<<"age is  : "<<age<<endl;
+        }
+};
+int main()
+{
+    student s1("krish",21);
+    student s2("ram",29);
+
+    s1.show();
+    cout<<"name is  : "<<s1.name<<endl;
+    cout<<"age is  : "<<s1.age<<endl;
+    s2.show();
+    // s1.name ="sita";
+    // s1.age =25;
+    // s1.show();
+    return 0; 
 }
