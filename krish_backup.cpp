@@ -161,7 +161,7 @@ int main()
 */ 
 
 // private : 
-
+/*
 #include <iostream>
 using namespace std;
 class student 
@@ -182,5 +182,37 @@ int main()
     // cout<<"id is  : "<<s1.id<<endl; // not accessible bcz of  private  
     // cout<<"name is  : "<<s1.name<<endl;
     s1.show(); 
+    return 0;
+}
+*/
+
+// 
+#include <iostream>
+using namespace std;
+class student 
+{
+    private :
+        int id; 
+        string name; 
+    public : 
+        void input()
+        {
+            cout<<"enter the id : ";
+            cin>>id;
+            cout<<"enter the name : ";
+            cin>>name;
+        }
+        void  show()
+        {
+            cout<<"id is  : "<<id<<endl;
+            cout<<"name is  : "<<name<<endl;
+        }
+};
+
+int main()
+{
+    student s1; 
+    s1.input();
+    s1.show();
     return 0;
 }
