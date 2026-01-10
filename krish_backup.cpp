@@ -295,7 +295,7 @@ int main()
 */ 
 // parameterized constructor :
 
-
+/*
 #include <iostream>
 using namespace std;
 class student
@@ -327,4 +327,78 @@ int main()
     // s1.age =25;
     // s1.show();
     return 0; 
+}
+*/
+
+//copy constructor  : 
+/*
+#include <iostream>
+using namespace std; 
+class student 
+{
+    public : 
+        string name; 
+        int age;
+    student(string n , int a ) 
+    {
+        name =n;
+        age =a; 
+    }
+    student(const student &s1)
+    {
+        name =s1.name; 
+        age =s1.age;
+    }
+
+};
+int main()
+{
+    student s1("krish",21); 
+    student s2(s1); 
+
+    cout<<"name is  : "<<s2.name<<endl;
+    cout<<"age is  : "<<s2.age<<endl;
+    return 0; 
+}
+*/
+
+//constructor  overloading  ; 
+
+#include<iostream>
+using namespace std; 
+class student 
+{
+    public : 
+        string name; 
+        int age;
+    student()
+    {
+        name ="";   // default constructor
+        age =0; 
+    }
+    student(string n)
+    {
+        name =n;  // non parameterized constructor
+        age =20; 
+    }
+    student(string n , int a)
+    {
+        name =n;  // parameterized constructor
+        age =a; 
+    }
+    void  show()
+    {
+        cout<<"name is  : "<<name<<endl;
+        cout<<"age is  : "<<age<<endl;
+    }
+}; 
+int main()
+{
+    student s1;
+    s1.show();  
+    student s2("krish");
+    s2.show(); 
+    student s3("krish",21);
+    s3.show();
+    return 0;
 }
