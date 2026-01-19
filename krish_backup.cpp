@@ -363,7 +363,7 @@ int main()
 */
 
 //constructor  overloading  ; 
-
+/*
 #include<iostream>
 using namespace std; 
 class student 
@@ -401,4 +401,60 @@ int main()
     student s3("krish",21);
     s3.show();
     return 0;
+}
+*/
+
+// inheritance  : to  inherit  properties  and  methods  from  a  base  class  
+
+/*
+types : 
+1. single inheritance 
+2. multiple inheritance 
+3. multi level inheritance 
+4. hybrid inheritance 
+5. hirearchy inheirtance
+*/
+
+//single inheritance : 
+
+#include<iostream>
+using namespace std;
+class student   // base class 
+{ 
+    public : 
+        string name;
+        int age;
+    student(string  n  , int a)
+    {
+        name =n; 
+        age =a; 
+    }
+    void display()
+    {
+        cout<<"name is  : "<<name<<endl;
+        cout<<"age is  : "<<age<<endl;
+    }
+};
+class teacher : public student // teacher ==>derived class
+{
+    public : 
+        string subject; 
+    teacher(string n,int a,string s) :student(n,a) // based class constructor called
+    {   
+        subject =s;
+    }
+    void show()
+    {
+        cout<<"student  information  : "<<endl;
+        // cout<<"name is  : "<<name<<endl;
+        // cout<<"age is  : "<<age<<endl;
+        student ::display();
+        cout<<"teacher subject is  : "<<subject<<endl;
+    }
+};
+int main()
+{
+    teacher t1("krish",20,"java"); 
+    t1.show(); 
+    return 0; 
 }
