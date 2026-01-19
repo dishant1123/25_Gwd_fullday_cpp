@@ -424,10 +424,10 @@ class student   // base class
     public : 
         string name;
         int age;
-    student(string  n  , int a)
+    student()
     {
-        name =n; 
-        age =a; 
+        name ="dhyan"; 
+        age =20; 
     }
     void display()
     {
@@ -439,7 +439,7 @@ class teacher : public student // teacher ==>derived class
 {
     public : 
         string subject; 
-    teacher(string n,int a,string s) :student(n,a) // based class constructor called
+    teacher(string s) :student() // based class constructor called
     {   
         subject =s;
     }
@@ -454,7 +454,7 @@ class teacher : public student // teacher ==>derived class
 };
 int main()
 {
-    teacher t1("krish",20,"java"); 
+    teacher t1("java"); 
     t1.show(); 
     return 0; 
 }
