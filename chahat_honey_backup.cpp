@@ -181,6 +181,7 @@ int main()
 */
 
 // parameterized constructor :
+/*
 
 #include <iostream>
 using namespace std;
@@ -210,4 +211,87 @@ int main()
     s1.show(); 
     s2.show();
     return 0 ;
+}
+*/
+
+// copy constructor :used to copy object into another . 
+/*
+#include <iostream>
+using namespace std;
+class student 
+{
+    public : 
+        string name ;
+        int rollno; 
+    student(string n , int r )
+    {
+        name =n; 
+        rollno =r;
+    }
+    student(const student &s)
+    {
+        name =s.name; 
+        rollno =s.rollno;
+    }
+    void show()
+    {
+        cout<<"rollno : "<<rollno<<endl;
+        cout<<"name : "<<name<<endl;
+    }
+};
+int main()
+{
+    student s1("chahat" , 20);
+    student s2(s1); 
+    s2.show();
+    return 0; 
+}
+*/
+
+// constructor overloading :
+
+#include <iostream>
+using namespace std;
+class student 
+{
+    public : 
+        string name ;
+        int  rollno; 
+    student()
+    {
+        name =""; 
+        rollno =0;  
+    }
+    student(int r)
+    {
+        name ="chahat";
+        rollno =r; 
+    }
+    student(string n , int r )
+    {
+        name =n;
+        rollno =r;
+    }
+    void  show()
+    {
+        cout<<"rollno : "<<rollno<<endl;
+        cout<<"name : "<<name<<endl;
+    }
+    
+}; 
+int main()
+{
+    student s1;
+    student s2(20); 
+    student s3("honey" , 30);
+
+    cout<<"default  constructor called : "<<endl;
+    s1.show(); 
+
+    cout<<"non parameterized / parameterized constructor called : "<<endl;
+    s2.show();
+
+    cout<<"parameterized constructor called : "<<endl;
+    s3.show();
+    return 0; 
 }
