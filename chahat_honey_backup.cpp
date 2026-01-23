@@ -249,7 +249,7 @@ int main()
 */
 
 // constructor overloading :
-
+/*
 #include <iostream>
 using namespace std;
 class student 
@@ -294,4 +294,104 @@ int main()
     cout<<"parameterized constructor called : "<<endl;
     s3.show();
     return 0; 
+}
+*/ 
+
+// banking system :
+#include <iostream>
+using namespace std;
+class bank 
+{
+    private  : 
+        int  pin; 
+        double balance; 
+    protected :
+        int accno; 
+    public :
+        bank(int p , int a)
+        {
+            pin =p; 
+            accno =a; 
+            balance =25000; 
+            cout<<"account created successfully"<<endl;
+        }
+        bool checkpin(int p)
+        {
+            return (p==pin);
+        }
+        void  depsit(double amt)
+        {
+            balance +=amt;
+            cout<<"deposited : "<<amt<<endl;
+        }
+        void  withdraw(double amt)
+        {
+            if(balance -amt >=10000)
+            {
+                balance -=amt;
+                cout<<"withdrawed : "<<amt<<endl;
+            }
+            else 
+            {
+                cout<<"min balance  require  rs. 10000"<<endl;
+            }
+        }
+        void showbalance()
+        {
+            cout<<"balance : "<<balance<<endl;
+        }
+};
+int main()
+{
+    int acc,pin,choice,inputpin;
+    double amt; 
+
+    cout<<"enter account no : ";
+    cin>>acc;
+    cout<<"enter pin : ";
+    cin>>pin; 
+
+    bank b1(pin,acc);
+    cout<<"enter the  pin  to access account : ";
+    cin>>inputpin;
+
+    if(!b1.checkpin(inputpin))
+    {
+        cout<<"invalid pin"<<endl;
+        return 0;
+    }
+    do
+    {
+        cout<<"BANK MENU"<<endl;
+        cout<<"1.deposit"<<endl;
+        cout<<"2.withdraw"<<endl;
+        cout<<"3.show balance"<<endl;
+        cout<<"4.exit"<<endl;
+        cout<<"enter choice : ";
+        cin>>choice;
+        switch(choice)
+        {
+            case 1:
+                cout<<"enter amount  for depsoit: ";
+                cin>>amt; 
+                b1.depsit(amt);
+                break;
+            case 2:
+                cout<<"enter amount  for withdraw: ";
+                cin>>amt; 
+                b1.withdraw(amt);
+                break;
+            case 3: 
+                b1.showbalance();
+                break;
+            case 4 :
+                cout<<"aabhar ........exiting"<<endl;
+                break;
+            default :
+                cout<<"invalid choice"<<endl;
+                break;
+        }
+
+    } while (choice !=4);
+    return 0;
 }
