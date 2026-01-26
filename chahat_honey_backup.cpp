@@ -449,6 +449,7 @@ int main()
 }
 
 */
+/*
 #include <iostream>
 using namespace std;
 class student 
@@ -491,4 +492,63 @@ int main()
     t1.display();
     return 0; 
 }
-    
+*/ 
+
+// multiple inheritance : 2 base class 1 derived class
+
+/*
+class a 
+class b 
+
+class c : public a, public b 
+*/
+
+#include <iostream>
+using namespace std;
+class student 
+{
+    private : 
+        int  rollno ;
+    public : 
+        student(int  r)
+        {
+            rollno =r;
+        }
+    void show()
+    {
+        cout<<"rollno : "<<rollno<<endl;
+    }
+};
+class sports  
+{
+    private :
+        int score;
+    public : 
+        sports(int s)
+        {
+            score=s;
+        }
+    void score_show()
+    {
+        cout<<"score : "<<score<<endl;
+    }
+};
+
+class result : public student,public sports
+{
+    public : 
+        result(int r, int s ): student(r), sports(s)
+        {
+        }
+    void display()
+    {
+        student::show();
+        sports::score_show();
+    }
+};
+int main()
+{
+    result r1(1,90); 
+    r1.display();
+    return 0;
+}
