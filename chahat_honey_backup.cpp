@@ -410,7 +410,7 @@ int main()
 
 
 // single level inheritance : 1 base class 1 derived class
-
+/*
 #include <iostream>
 using namespace std;
 class student 
@@ -447,3 +447,48 @@ int main()
     t1.show();
     return 0; 
 }
+
+*/
+#include <iostream>
+using namespace std;
+class student 
+{
+    private: 
+        string name ; 
+        int rollno;
+    public : 
+    student(string n , int r )
+    {
+        name =n; 
+        rollno =r;
+    }
+    void  show()
+    {
+        cout<<"student information"<<endl;
+        cout<<"rollno : "<<rollno<<endl;
+        cout<<"name : "<<name<<endl;
+    }
+};
+class teacher : public student
+{
+    private :
+        string  subject;
+    public : 
+        teacher(string n,int r , string s):student(n,r)  // base class constructor
+    {
+        subject=s;
+    }
+    void display()
+    {
+        student::show();
+        cout<<"subject : "<<subject<<endl;
+    }
+};
+
+int main()
+{
+    teacher t1("chahat",20,"c++");
+    t1.display();
+    return 0; 
+}
+    
