@@ -298,6 +298,7 @@ int main()
 */ 
 
 // banking system :
+/*
 #include <iostream>
 using namespace std;
 class bank 
@@ -394,4 +395,55 @@ int main()
 
     } while (choice !=4);
     return 0;
+}
+*/ 
+// inheritance :  to inherit  properties  and  methods  from  parent  class  to  child  class
+
+// type of inheritance :
+/*
+1. single level inheritance
+2. multiple  inheritance
+3. multi level inheritance
+4. hirarchical inheritance
+5. hybrid inheritance
+*/
+
+
+// single level inheritance : 1 base class 1 derived class
+
+#include <iostream>
+using namespace std;
+class student 
+{
+    public : 
+        string name ; 
+        int rollno; 
+    student(string n , int r )
+    {
+        name =n; 
+        rollno =r;
+    }
+};
+class teacher : public student
+{
+    public : 
+        string  subject; 
+    teacher(string n,int r , string s):student(n,r)  // base class constructor
+    {
+        subject=s;
+    }
+    void show()
+    {
+        cout<<"student information"<<endl;
+        cout<<"rollno : "<<rollno<<endl;
+        cout<<"name : "<<name<<endl;
+        cout<<"subject : "<<subject<<endl;
+    }
+};
+
+int main()
+{
+    teacher t1("chahat",20,"c++");
+    t1.show();
+    return 0; 
 }
