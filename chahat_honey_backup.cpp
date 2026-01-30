@@ -503,6 +503,9 @@ class b
 class c : public a, public b 
 */
 
+/*
+
+
 #include <iostream>
 using namespace std;
 class student 
@@ -551,4 +554,74 @@ int main()
     result r1(1,90); 
     r1.display();
     return 0;
+}
+
+*/ 
+
+// multi level  inheritance :
+
+/*
+class a 
+class b : public a 
+class c : public b 
+*/
+
+#include <iostream>
+using namespace std;
+class father 
+{
+    public : 
+        string name; 
+        int age; 
+    father(string n , int a)
+    {
+        name= n; 
+        age =a;
+    }
+    void show()
+    {
+        cout<<"father name : "<<name<<endl;
+        cout<<"father age : "<<age<<endl;
+    }
+};
+class mother : public father 
+{
+    public : 
+        string m_name; 
+        int m_age;
+    mother(string  n , int a , string m , int ma) : father(n,a)
+    {
+        m_name =m; 
+        m_age =ma;
+    }
+    void  display()
+    {
+        father :: show(); 
+        cout<<"mother name : "<<m_name<<endl;
+        cout<<"mother age : "<<m_age<<endl;
+    }
+}; 
+class child : public mother 
+{
+    public : 
+        string c_name="chahat"; 
+        string school="anand niketan school";
+    child(string n , int a , string m , int ma) : mother(n,a,m,ma)
+    {
+    }
+    void info()
+    {
+        mother::display();
+        cout<<"child name : "<<c_name<<endl;
+        cout<<"school : "<<school<<endl;
+    }
+};
+int main()
+{
+    child c1("mahesh",35,"riya",33); 
+    mother m1("mahesh",35,"riya",33);
+    m1.display();
+    c1.info();
+    return 0; 
+
 }
