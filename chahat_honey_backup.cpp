@@ -565,7 +565,7 @@ class a
 class b : public a 
 class c : public b 
 */
-
+/*
 #include <iostream>
 using namespace std;
 class father 
@@ -625,3 +625,13 @@ int main()
     return 0; 
 
 }
+*/ 
+
+// hirerchical inheritance :
+
+/*
+class a :
+class b : public a
+class c : public a 
+
+*/
