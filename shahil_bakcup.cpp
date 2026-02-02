@@ -3,6 +3,7 @@ inheritance : to inherit properties / method  from a base class.
 */
 // ex : 1 single level inheritance : 
 
+/*
 #include <iostream>
 using namespace std;
 class student  // base  class 
@@ -45,3 +46,48 @@ int main()
     t.display(); 
     return 0;  
 }
+*/
+
+// ex :2  function   : 
+/*
+#include <iostream>
+using namespace std;
+class student 
+{
+    private :
+        string name;
+        int  rollno; 
+    public : 
+        student()
+        {
+            name ="shahil";
+            rollno =1;
+        }
+    void  show()
+    {
+            cout<<"name : "<<name<<endl;
+            cout<<"roll no : "<<rollno<<endl;
+    }
+};
+
+class teacher : public student
+{
+    public : 
+        string subject;
+    teacher():student() // base class constructor called
+    {
+        subject ="cpp";
+    }
+    void  display()
+    {
+        student :: show(); 
+        cout<<"subject : "<<subject<<endl;
+    }
+};
+int main()
+{
+    teacher t; 
+    t.display(); 
+    return 0; 
+}
+*/ 
