@@ -635,3 +635,111 @@ class b : public a
 class c : public a 
 
 */
+
+// hybrid inheritance :
+/*
+its combination  of  one or more then one type  of  inheritance .
+generally  its used for  combination  of  multiple  and  multi level  inheritance.
+
+multiple                          vs multi level 
+
+class a                               class a 
+class b                               class  b : public a   
+class c : public a, public b          class c: public b 
+
+diamond problem  :  use virtual function  
+person  
+    show() 
+
+emp : person 
+    show()
+
+manager : person 
+    show()
+
+*/
+/*
+#include <iostream>
+using namespace std; 
+class person 
+{
+    public :
+        virtual void  show()
+        {
+            cout<<"person"<<endl;
+        } 
+};
+class emp : public person 
+{
+    public :
+        void show() override 
+        {
+            cout<<"emp"<<endl;
+        }
+};
+class manager : public emp 
+{
+    public : 
+        void  show() override 
+        {
+            cout<<"manager"<<endl;
+        }
+};
+
+class developer : public emp 
+{
+    public : 
+        void  show() override
+        {
+            cout<<"developer"<<endl;
+        }
+};
+int main()
+{
+    person *p ;
+    manager m1; 
+    developer d1;
+
+    p = &m1; 
+    p->show(); // m1  ==> manager 
+    
+    p = &d1; 
+    p->show(); // d1 ==> developer 
+
+    return 0 ;
+
+}
+    */ 
+/*
+int a =10 ; 
+int  *p ;  // pointer  declaration  
+p = &a;   // pointer intialization
+*/
+
+// this  : 
+
+#include <iostream>
+using namespace std;
+class student 
+{
+    public :
+        string name ;
+        int  rollno; 
+    student(string  name, int  rollno) // string  n  int  r   ==> name =n , rollno =r 
+    {
+        this->name =name; 
+        this->rollno =rollno; 
+    }
+    void show()
+    {
+        cout<<"rollno : "<<this->rollno<<endl;
+        cout<<"name : "<<this->name<<endl;
+    }
+};
+
+int main()
+{
+    student s1("chahat" , 20);
+    s1.show(); 
+    return 0;
+}

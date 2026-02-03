@@ -49,7 +49,7 @@ int main()
 */
 
 // ex :2  function   : 
-/*
+
 #include <iostream>
 using namespace std;
 class student 
@@ -90,4 +90,3 @@ int main()
     t.display(); 
     return 0; 
 }
-*/ 
