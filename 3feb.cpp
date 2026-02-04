@@ -33,7 +33,9 @@ class vehicle
 class car ; 
 class bike; 
 
-void insepctvehicle(car &c, bike &b);
+//void insepctvehicle(car& c, bike &b);
+void insepctcar(car& c);
+void insepctbike(bike& b);
 
 class car : public vehicle
 {
@@ -61,7 +63,8 @@ class car : public vehicle
     {
         cout<<"mileage: "<<distance/fuel<<"km/l"<<endl;
     }
-    friend void insepctvehicle(car &c, bike &b);
+    friend void insepctcar(car &c);
+    friend void insepctbike(bike &b);
 };
 
 class bike : public vehicle
@@ -86,16 +89,21 @@ class bike : public vehicle
         {
                 cout<<"fuel type : petrol"<<endl;
         }
-        friend void insepctvehicle(car &c, bike &b);
+        friend void insepctcar(car &c);
+        friend void insepctbike(bike &b);
 
 };
 
-void insepctvehicle(car &c, bike &b)
+void insepctcar(car &c)
 {
     cout<<"\n friend function called"<<endl;
     
     cout<<"car brand :(private)"<<c.brand<<endl;
     cout<<"car speed :(protected)"<<c.speed<<endl;
+}
+void insepctbike(bike &b)
+{
+    cout<<"\n friend function called"<<endl;
 
     cout<<"bike model :(private)"<<b.model<<endl;
     cout<<"bike speed :(protected)"<<b.speed<<endl;
@@ -230,7 +238,8 @@ int main() // menu driven
             }
             case 3: 
             {
-                insepctvehicle(c,b); 
+                insepctcar(c); 
+                insepctbike(b);
                 break;
             }
             case 4: 
