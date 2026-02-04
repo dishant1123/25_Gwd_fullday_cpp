@@ -102,6 +102,7 @@ void insepctvehicle(car &c, bike &b)
 }
 int main() // menu driven 
 {
+    /*
     vehicle *v; 
     car c; 
     bike b; 
@@ -175,6 +176,86 @@ int main() // menu driven
         }
 
     }while (choice !=4); 
+    */
+
+    vehicle *v[50] ;
+    int  vcount =0 ;
+
+    car c; 
+    bike b; 
+
+    int  choice ; 
+    do{
+        cout<<"vehicle management system"<<endl;
+        cout<<"1. create car"<<endl;
+        cout<<"2. create bike"<<endl;
+        cout<<"3. inspect vehicle (friend function)"<<endl;
+        cout<<"4. display vehicle"<<endl;
+        cout<<"5. exit"<<endl;
+        cout<<"enter the choice: ";
+        cin>>choice; 
+        switch(choice)
+        {
+            case 1: 
+            {
+                car* c=new car(); 
+                string brand;
+                int  speed;
+                cout<<"enter car brand : ";
+                cin>>brand;
+                cout<<"enter car speed : ";
+                cin>>speed;
+
+                c->set_brand(brand);
+                c->set_speed(speed);
+
+                v[vcount++] =c; 
+                break;
+            }
+            case 2: 
+            {
+                bike* b=new bike();
+                string model;
+                int  speed;
+                cout<<"enter bike model : ";
+                cin>>model;
+                cout<<"enter bike speed : ";
+                cin>>speed;
+
+                b->set_model(model);
+                b->set_speed(speed);
+
+                v[vcount++] =b;
+                break;
+            }
+            case 3: 
+            {
+                insepctvehicle(c,b); 
+                break;
+            }
+            case 4: 
+            {
+                cout<<"all veihcle display"<<endl;
+                for(int i =0; i<vcount; i++)
+                {
+                    v[i]->showdetalis(); 
+                    v[i]->feultype();
+                }
+                break;
+            }
+            case 5:
+            {
+                cout<<"exiting"<<endl;
+                break;
+            }
+            default :
+            {
+                cout<<"invalid choice"<<endl;
+                break;
+            }
+            
+        }
+    }while(choice !=5);
     return 0;
 }
 
