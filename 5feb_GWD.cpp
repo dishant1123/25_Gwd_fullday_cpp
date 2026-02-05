@@ -95,7 +95,6 @@ class employee : public person
             cout<<"salary :"<<salary<<endl;
         }
 };
-
 class skill 
 {
     protected : 
@@ -115,12 +114,70 @@ class trainer : public employee , public skill
         }
     void showtrainer()
     {
-            
+            employee : showemp(); 
+            cout<<"skill :"<<skill_name<<endl;
     }
 };
+int  main()
+{
+    int  choice; 
+    do{
+        cout<<"MENU"<<endl;
+        cout<<"1. single inheritance"<<endl;
+        cout<<"2. multi level inheritance"<<endl;
+        cout<<"3. hierarchy"<<endl;
+        cout<<"4.multiple inheritance"<<endl;
+        cout<<"5. exit"<<endl;
+        cout<<"enter your choice :"<<endl;
+        cin>>choice; 
+
+        switch(choice)
+        {
+            case 1 :
+            {
+                student s1("honneeyy",22,29); 
+                s1.showstudent();
+                break;
+            }
+            case 2: 
+            {
+                clg_student c2("teahat",19,21,"Silver oak");
+                c2.showclg();
+                break;
+            }
+            case 3 :
+            {
+                employee e3("vedant",18,90000); 
+                e3.showemp();
+                break;
+            }
+            case 4 :
+            {
+                trainer t4("yug",18,100000,"python_developer");
+                t4.showtrainer();
+                break;
+            }
+            case 5 :
+            {
+                cout<<"good bye"<<endl;
+                break;
+            }
+            default :
+            {
+                cout<<"invalid choice"<<endl;
+                break;
+            }
+        }
+
+    }while(choice !=5);
+    return 0;
+}
+
 /*
     person :
     student : person 
     clg_student : student 
-    emp : person 
+    emp : person
+    skill : 
+    trainer : employee , skill
 */
