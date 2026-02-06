@@ -136,6 +136,14 @@ int  main()
             case 1 :
             {
                 student s1("honneeyy",22,29); 
+                
+                s1.set_name("shahil"); 
+                s1.set_age(21); 
+
+                cout<<"Using  get method"<<endl;
+                cout<<"name :"<<s1.get_name()<<endl;
+                cout<<"age :"<<s1.get_age()<<endl;
+
                 s1.showstudent();
                 break;
             }
