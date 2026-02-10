@@ -416,7 +416,7 @@ types :
 */
 
 //single inheritance : 
-
+/*
 #include<iostream>
 using namespace std;
 class student   // base class 
@@ -456,5 +456,135 @@ int main()
 {
     teacher t1("java"); 
     t1.show(); 
+    return 0; 
+}
+*/ 
+
+/*
+    multiple inheritance :
+
+==> multiple  base class  can  be  inherited  by  derived  class
+
+ex : class a 
+     class b
+     class c : public a , public b
+*/
+/*
+#include<iostream>
+using namespace std;
+class student 
+{
+    public : 
+        string name ; 
+    student(string n)
+    {
+        name =n; 
+    }
+};
+
+class student2 
+{
+    public :
+        string name1; 
+        int age; 
+
+    student2(string na , int a)
+    {
+        name1=na;
+        age=a;
+    }
+};
+class teacher : public student , public student2
+{
+    public : 
+        string subject;
+
+    teacher(string n,string na ,int a , string sub) : student(n),student2(na,a)
+    {
+        subject =sub;
+    }
+    void show()
+    {
+        cout<<"student  information  : "<<endl;
+        cout<<"name is  : "<<name<<endl;
+        cout<<"another student name  is  : "<<name1<<endl;
+        cout<<"age is  : "<<age<<endl;
+
+    }
+
+};
+
+int main()
+{
+    teacher t1("krish","dhyan",19,"java"); 
+    t1.show(); 
+    return 0;
+}
+*/
+
+/*
+multi level inheritance :
+
+class a  
+class b: public a 
+class c : public b 
+*/
+
+#include<iostream>
+using namespace std;
+class employee 
+{
+    public : 
+        string  name ;
+        int salary ; 
+    employee(string  n, int s )
+    {
+        name =n; 
+        salary =s; 
+    }
+    void  show()
+    {
+            cout<<"name is  : "<<name<<endl;
+            cout<<"salary is  : "<<salary<<endl;
+    }
+};
+
+class manager : public employee 
+{
+    public :
+        string department ; 
+    manager (string n, int s , string d) : employee(n,s)
+    {
+        department =d;
+    }
+    void  display()
+    {
+        employee ::show(); 
+        cout<<"department is  : "<<department<<endl;
+    }
+}; 
+class director : public manager 
+{
+    public :
+        string  director_name ;
+    director(string n, int s, string d,  string dn):manager(n,s,d)
+    {
+        director_name =dn;
+    }
+    void info()
+    {
+        manager::display();
+        cout<<"director name is  : "<<director_name<<endl;
+    }
+};
+
+int main()
+{
+    director d1("vishal",90000,"IT","krish");
+    d1.info();
+    // d1.show(); 
+
+    manager m1("dhyan",80000,"IT"); 
+    m1.show();
     return 0; 
 }
