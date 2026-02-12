@@ -62,7 +62,7 @@ int main()
 3. decided at run time . 
 4. uses virtual function  
 */
-
+/*
 #include <iostream>
 using namespace std;
 class animal 
@@ -121,7 +121,7 @@ int main()
     return 0; 
 
 }
-
+*/
 /*
 class shape  :  area () ==> drawing  shape  
 
@@ -129,3 +129,89 @@ class circle : public shape   ==> area 3.14 *r*r
 class rectangle : public shape  ==> area = l*b 
 class triangle : public shape  ==> area = 0.5*b*h
 */
+
+// ex : 3  inheritance  + polimorphism   + encapsulation :
+
+#include<iostream>
+using namespace std;
+class vehicle 
+{
+    private : 
+        string brand; 
+        int speed;
+    public : 
+        vehicle(string b, int s)
+        {
+            brand =b;
+            speed =s;
+        }
+        // encapsulation
+        string get_brand()
+        {
+            return brand;
+        }
+        int get_speed()
+        {
+            return speed;
+        }
+        void set_speed(int s)
+        {
+            if (s>0)
+            {
+                speed =s; 
+            }
+        }
+        // run  time  polymorphism
+        virtual void start()
+        {
+            cout<<"vehicle  is  starting ...."<<endl;
+        }
+        // complie  time  polymorphism
+        void accelerate()
+        {
+            speed +=10; 
+            cout<<"vehicle  is  accelerating  speed inc by 10...."<<endl;
+        }
+        void accelerate(int value)
+        {
+            speed +=value; 
+        }
+};
+
+class car : public vehicle 
+{
+    private : 
+        int  doors; 
+    public : 
+        car(string b, int  s, int d) : vehicle(b,s)
+        {
+            doors =d; 
+        }
+    void  start() override 
+    {
+        cout<<"car  is  starting ...."<<endl;
+    }
+    void showdetails()
+    {
+        cout<<"brand  is  : "<<get_brand()<<endl;
+        cout<<"speed  is  : "<<get_speed()<<endl;
+        cout<<"doors  is  : "<<doors<<endl;
+    }
+};
+
+int main()
+{
+    vehicle *v; 
+    car c ("honda",220,4);
+
+    v=&c; 
+
+    v->start(); 
+    c.accelerate(); // 10 
+    c.accelerate(20);   // 20  
+
+    c.set_speed(120); 
+    c.showdetails();
+
+return 0;
+}
