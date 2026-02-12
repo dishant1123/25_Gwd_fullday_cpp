@@ -121,3 +121,11 @@ int main()
     return 0; 
 
 }
+
+/*
+class shape  :  area () ==> drawing  shape  
+
+class circle : public shape   ==> area 3.14 *r*r 
+class rectangle : public shape  ==> area = l*b 
+class triangle : public shape  ==> area = 0.5*b*h
+*/
