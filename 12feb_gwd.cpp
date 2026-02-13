@@ -2,7 +2,7 @@
 polimorphsim  :  means one  names many forms 
 
 1. complie time  polymorphism  ==>function  overloading  
-2. rin time  polymorphism  ==>function  overriding
+2. run time  polymorphism  ==>function  overriding
 
 */
 
@@ -183,7 +183,7 @@ class car : public vehicle
     private : 
         int  doors; 
     public : 
-        car(string b, int  s, int d) : vehicle(b,s)
+        car(string b, int  s, int d) : vehicle(b,s)// based  class  constructor
         {
             doors =d; 
         }
