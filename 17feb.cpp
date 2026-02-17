@@ -27,7 +27,7 @@ int  main()
 */ 
 
 //ex :2 
-
+/*
 #include<iostream>
 #include<vector>
 #include<algorithm>
@@ -53,3 +53,50 @@ int main()
     }
     return 0; 
 }
+*/
+
+// ex :3   using class object : 
+
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+
+class student 
+{
+    public : 
+        string name ;
+        int  marks; 
+    student(string n, int  m)
+    {
+        name =n; 
+        marks =m; 
+    }
+
+};
+bool compare(student s1,student s2)
+{
+    return s1.marks < s2.marks;   // asc to marks 
+}
+int main()
+{
+    vector<student>v; 
+    v.push_back(student("saumya",98)); 
+    v.push_back(student("om",89)); 
+    v.push_back(student("purva",99)); 
+    v.push_back(student("sahil",91));
+    v.push_back(student("vidhi",95)); 
+
+    sort(v.begin(),v.end(),compare); 
+
+    cout<<"sorted marks is : "<<endl;
+
+    for(int i=0; i<v.size(); i++)
+    {
+        cout<<v[i].name<<" "<<v[i].marks<<endl;
+    }
+
+    return 0 ;
+}
+
+
