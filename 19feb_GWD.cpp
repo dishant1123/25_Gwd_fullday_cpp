@@ -70,7 +70,7 @@ int main()
 */ 
 
 // ex :2 abtraction using interface : 
-
+/*
 #include <iostream>
 using namespace std;
 class vehicle 
@@ -120,4 +120,64 @@ int main()
 
     return 0; 
 
+}
+*/
+
+/*
+1. Create an abstract class Shape with a pure virtual function area(). Derive classes Circle andRectangle and calculate their areas
+*/
+
+#include <iostream>
+using namespace std;
+class shape 
+{
+    public : 
+        virtual void area()=0; 
+};
+
+class circle : public shape
+{
+    private : 
+        int  radius; 
+    public :
+        circle(int r) 
+        {
+            radius =r;
+        }
+        void  area() override
+        {
+            float result =3.14*radius*radius;
+            cout<<"area  of  circle  is  : "<<result<<endl;
+        }
+
+};
+
+class rectangle : public shape
+{
+    private :
+        float length, breadth;
+    public :
+        rectangle(float l, float b)
+        {
+            length =l;
+            breadth =b;
+        }
+    void area() override
+    {
+        float result =length*breadth;
+        cout<<"area  of  rectangle  is  : "<<result<<endl;
+    }
+}; 
+
+int main()
+{
+    shape *s; 
+
+    shape *c= new circle(5);
+    c->area();
+
+    shape *r= new rectangle(5,10);
+    r->area();
+
+    return 0; 
 }
