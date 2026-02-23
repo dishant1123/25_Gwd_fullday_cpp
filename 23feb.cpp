@@ -44,7 +44,7 @@ int main()
 */ 
 
 // append : ios::app
-
+/*
 #include <iostream>
 #include <fstream>
 using namespace std;
@@ -55,5 +55,73 @@ int main()
     fout<<"live in ahmedabad"<<endl;
     fout<<"study in Royal."<<endl;
     fout.close();
+    return 0; 
+}
+*/ 
+
+// emp managment system using file handling  :
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+struct employess
+{
+    int id; 
+    string name;
+    int salary; 
+};
+void addemp()
+{
+    employess emp; 
+    ofstream fout("employees.txt",ios::app); 
+
+    cout<<"enter id:";
+    cin>>emp.id;
+    cout<<"enter the  name  : "; 
+    cin.ignore(); 
+    getline(cin,emp.name);
+    cout<<"enter salary : ";
+    cin>>emp.salary;
+
+    fout<<emp.id<<" "<<emp.name<<" "<<emp.salary<<endl;
+    fout.close();
+    cout<<"employee added"<<endl;
+
+}
+
+void display()
+{
+    employess emp; 
+    ifstream fin("employees.txt");
+
+    cout<<"\n\n\t\t\t\t\tEmployee list\n\n";
+
+    while(fin>>emp.id>>emp.name>>emp.salary)
+    {
+        cout<<"id :"<<emp.id<<endl;
+        cout<<"name :"<<emp.name<<endl;
+        cout<<"salary :"<<emp.salary<<endl;
+
+    }
+    fin.close();
+}
+int main()
+{
+    int choice; 
+    do{
+        cout<<"\n\t\t\t\t\tEmployee managment system\n\n";
+        cout<<"1.add employee\n";
+        cout<<"2.display employee list\n";
+        cout<<"3.exit\n";
+        cout<<"enter choice : ";
+        cin>>choice;
+        switch(choice)
+        {
+            case 1: addemp();break; 
+            case 2: display();break;
+            case 3: cout<<"bye...";break;
+            default : cout<<"enter correct choise"<<endl;
+        }
+    }while(choice!=3);
     return 0; 
 }
