@@ -124,3 +124,16 @@ int main()
     }while(choice!=5);
     return 0; 
 }
+
+// hw :   # include<time.h>
+/*
+                    STATE BANK OF INDIA 
+
+BRANCH :AHMEDABAD                               DATE :25-FEB-2020
+ACCOUNT NO :1234567890                          AC HOLDER NAME :SHAHIL
+
+no       DATE        TRANSACTION      DR      CR     BALANCE 
+1        25-FEB-20   DEPOSIT                10000    10000 
+2        25-FEB-20   WITHDRAWAL       5000           5000 
+
+*/
