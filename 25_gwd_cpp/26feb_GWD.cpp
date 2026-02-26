@@ -44,7 +44,7 @@ int main()
 }
 */ 
 // ex :2 
-
+/*
 #include <iostream>
 using namespace std;
 class number 
@@ -68,3 +68,52 @@ int main()
     cout<<"sum : "<<add(a,b)<<endl;
     return 0; 
 }
+*/
+/*
+using friend function  : two values swap  
+*/
+
+// ex :3  friend function  using  two class 
+
+#include <iostream>
+using namespace std;
+
+class b; 
+
+class a 
+{
+    private :
+        int x ; 
+    public : 
+        a(int x)
+        {
+            this->x =x;
+        }
+        friend void add(a obj1, b obj2);
+};
+class b 
+{
+    private :
+        int y; 
+    public :
+        b(int y)
+        {
+            this->y =y;
+        }
+    friend void add(a obj1, b obj2);
+}; 
+void add(a obj1 ,b obj2)
+{
+        cout<<"add :"<<obj1.x +obj2.y;
+}
+
+int main()
+{
+    a obj1(50); 
+    b obj2(100); 
+    add(obj1,obj2);
+    return 0; 
+}
+/*
+swap : 
+*/
