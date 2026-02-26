@@ -184,6 +184,17 @@ void display_all()
         employees[i]->display(); 
     }
 }
+void delete_emp() // pop  ==> last add delete  ==> id ==>match ==>delete 
+{
+    if(employees.empty())
+    {
+        cout<<"no record found";
+        return; 
+    }
+    delete employees.back(); // free memory first
+    employees.pop_back(); // delete last 
+    cout<<"\n\n\t\t\t\t\tEmployee deleted\n\n";
+}
 int main()
 {
     int choice; 
@@ -192,7 +203,8 @@ int main()
         cout<<"employees managment system\n";
         cout<<"1.addemp"<<endl;
         cout<<"2.display"<<endl;
-        cout<<"3.exit"<<endl;
+        cout<<"3.delete"<<endl;
+        cout<<"4.exit"<<endl;
         cin>>choice;
         switch(choice)
         {
@@ -202,7 +214,9 @@ int main()
             case 2: 
                 display_all();
                 break;
-            case 3:
+            case 3 :
+                delete_emp();
+            case 4:
                 return 0; 
             default:
                 cout<<"\n\n\t\t\t\t\tInvalid choice\n\n";
