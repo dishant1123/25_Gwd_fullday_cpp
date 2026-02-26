@@ -2,19 +2,18 @@
 employees managment  system  : inheritance + encapsulation  +abstraction  : 
 
 */
-
 #include <iostream>
 #include<vector>
 using namespace std;
 
-class employees 
+class Employees
 {
     protected : 
         int emp_id; 
         string  name; 
         int  salary; 
     public : 
-        employees(int id,string n ,int s)
+        Employees(int id,string n ,int s)
         {
             emp_id=id; 
             name=n;
@@ -34,12 +33,12 @@ class employees
         }
         virtual void display()=0;   //abtraction   
 };
-class manager : public employees // single  inheritance  
+class manager : public Employees // single  inheritance  
 {
     private : 
         string department; 
     public : 
-        manager(int id,string n, int s,string d):employees(id,n,s)
+        manager(int id,string n, int s,string d):Employees(id,n,s)
         {
             department=d;
         }
@@ -52,12 +51,12 @@ class manager : public employees // single  inheritance
         cout<<"department :"<<department<<endl;
     }
 };
-class developer :public employees // hirearchy 
+class developer :public Employees // hirearchy 
 {
     protected : 
         string  language;
     public : 
-        developer(int  id, string n, int s, string l) :employees(id,n,s)
+        developer(int  id, string n, int s, string l) :Employees(id,n,s)
         {
             language=l;
         }
@@ -134,6 +133,83 @@ class hybridemp :public senior_developer,public bonus
     }
 
 };
+
+vector<Employees*>employees ; 
+
+void add_emp()
+{
+    int type, id,exp,salary,bonus;
+    string name,dept,lang; 
+    cout<<"\n1.manager\n2.developer\n3.senior developer\n4.tech lead\n5.hybrid emp\n";
+    cin>>type; 
+
+    cout<<"\nEnter id :";
+    cin>>id;
+    cout<<"\nEnter name :";
+    cin>>name;
+    cout<<"\nEnter salary :";
+    cin>>salary;
+
+    if(type==1)
+    {
+            cout<<"\nEnter department :";
+            cin>>dept;
+            employees.push_back(new manager(id,name,salary,dept)); 
+
+    }
+    else if(type==2)
+    {
+        cout<<"\nEnter language :";
+        cin>>lang;
+        employees.push_back(new developer(id,name,salary,lang));
+    }
+    else if(type==3)
+    {
+        cout<<"\nEnter experience :";
+        cin>>exp;
+        cout<<"\nEnter language :";
+        cin>>lang; 
+        employees.push_back(new senior_developer(id,name,salary,lang,exp));
+    }
+}
+void display_all()
+{
+    if(employees.empty())
+    {
+        cout<<"no record found";
+        return; 
+    }
+    for(int i=0; i<employees.size(); i++)
+    {
+        employees[i]->display(); 
+    }
+}
+int main()
+{
+    int choice; 
+    while(true)
+    {
+        cout<<"employees managment system\n";
+        cout<<"1.addemp"<<endl;
+        cout<<"2.display"<<endl;
+        cout<<"3.exit"<<endl;
+        cin>>choice;
+        switch(choice)
+        {
+            case 1:
+                add_emp();
+                break;
+            case 2: 
+                display_all();
+                break;
+            case 3:
+                return 0; 
+            default:
+                cout<<"\n\n\t\t\t\t\tInvalid choice\n\n";
+                break;
+        }
+    }
+}
 
 /*
 menu  : 
