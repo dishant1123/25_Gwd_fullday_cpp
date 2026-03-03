@@ -51,7 +51,7 @@ int main()
 */
 
 // ex :2  multiple catch blocks 
-
+/*
 #include <iostream>
 using namespace std;
 int main()
@@ -89,3 +89,66 @@ int main()
     }
     return 0; 
 }
+    */
+// task  :1 handle value  error . 
+
+
+// class object  :  exceptional handling  
+
+#include <iostream>
+using namespace std;
+
+class insufficient_funds  // custom exception class
+{
+    public : 
+        void msg()
+        {
+            cout<<"error : insufficient funds"<<endl;
+        }
+};
+
+class bank_account
+{
+    public : 
+        int balance; 
+    
+    bank_account(int  b)
+    {
+        balance = b;
+    }
+    void withdraw(int amount)
+    {
+        if(amount >balance)
+        {
+            throw insufficient_funds(); 
+        }
+        else 
+        {
+            balance-=amount;
+            cout<<"withdrawn : "<<amount<<endl;
+            cout<<"remaining balance : "<<balance<<endl;
+        }
+    }
+        
+};
+
+int main()
+{
+    bank_account acc(25000);
+
+    try 
+    {
+        acc.withdraw(3000);
+    }
+    catch (insufficient_funds e)
+    {
+        e.msg();
+    }
+    return 0; 
+}
+
+/*
+task  :2 
+age >18 valid  for voting 
+less than  18  invalid  for voting
+*/
