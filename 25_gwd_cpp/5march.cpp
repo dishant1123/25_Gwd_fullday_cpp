@@ -105,3 +105,25 @@ sort asc to desc ==> {1,2,4,6,8}
 
 
 */
+
+// sort  using  vector  : 
+
+// ex :5 
+
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+int main()
+{
+    vector<int>y ={1,20,4,6,8};
+
+    // sort(y.begin(), y.end());
+    sort(y.begin(), y.end(),greater<int>());
+
+    for(int i=0; i<y.size(); i++)
+    {
+        cout<<y[i]<<" ";
+    }
+    return 0; 
+}
