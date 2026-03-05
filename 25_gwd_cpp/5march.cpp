@@ -46,7 +46,7 @@ int main()
 */
 
 // ex :3  adding element in vector using loop :
-
+/*
 #include<iostream>
 #include<vector>
 using namespace std;
@@ -71,3 +71,37 @@ int main()
     return 0; 
 
 }
+*/ 
+
+// ex :4 pop_back () ==> remove the last element from the vector
+
+/*
+#include<iostream>
+#include<vector>
+using namespace std;
+int main()
+{
+    vector<int>y ={1,2,3,4,5};
+
+    cout<<"vector size  before pop_back() : "<<y.size()<<"\n";
+
+    y.pop_back(); 
+    y.pop_back();
+    cout<<"vector size  after pop_back() : "<<y.size()<<"\n";
+
+    for(int i=0; i<y.size(); i++)
+    {
+        cout<<y[i]<<" ";
+    }
+    return 0; 
+}
+
+*/ 
+
+// task :1 
+/*
+int  a[5] = {1,4,2,6,8}
+sort asc to desc ==> {1,2,4,6,8}
+
+
+*/
