@@ -109,7 +109,7 @@ sort asc to desc ==> {1,2,4,6,8}
 // sort  using  vector  : 
 
 // ex :5 
-
+/*
 #include<iostream>
 #include<vector>
 #include<algorithm>
@@ -127,3 +127,66 @@ int main()
     }
     return 0; 
 }
+*/ 
+
+// ex :5 
+
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+class student 
+{
+    public : 
+        int id;
+        string name; 
+    void get_data()
+    {
+        cout<<"enter id : ";
+        cin>>id;
+        cout<<"enter name : ";
+        cin>>name;
+    }
+    void  show_data()
+    {
+        cout<<"id : "<<id<<"\n";
+        cout<<"name : "<<name<<"\n";
+    }
+};
+
+int main()
+{
+    vector<student>v;
+    student temp; 
+
+    int n; 
+    cout<<"enter the size of array : ";
+    cin>>n;
+
+    for(int i=0;i<n; i++)
+    {
+        temp.get_data();
+        v.push_back(temp); 
+    }
+    cout<<"student data is : \n";
+    for(int i=0; i<v.size(); i++)
+    {
+        v[i].show_data();
+    }
+    return 0;
+}
+
+/*
+task  :2 
+
+id  name   marks  
+1   ram    90
+2   shyam  80
+3   kamal  40
+
+asc to  desc ==> marks    
+id  name   marks
+3   kamal  40
+2   shyam  80
+1   ram    90
+*/
