@@ -105,3 +105,4 @@ int main()
     a.show(); 
     return 0; 
 }
+// ex :4 
