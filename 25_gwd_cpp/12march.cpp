@@ -76,7 +76,7 @@ int main()
 */ 
 
 // ex :3  multiple  parameter template
-
+/*
 #include <iostream>
 using namespace std;
 template <class t ,class t1>
@@ -105,4 +105,50 @@ int main()
     a.show(); 
     return 0; 
 }
-// ex :4 
+    */ 
+// ex :4  swap two value using  template  : 
+/*
+#include <iostream>
+using namespace std;
+template <class t>
+
+void swapping(t &a, t &b)
+{
+    t temp; 
+    temp =a; 
+    a =b;
+    b =temp;
+}
+int  main()
+{
+    int  x =10 , y=20;
+    swapping(x,y); 
+
+    cout<<"value of x is : "<<x<<endl;
+    cout<<"value of y is : "<<y<<endl;
+    return 0; 
+}
+*/
+
+// ex : 5  inline  function  (honey  clg topic)
+
+/*
+inline  function is  a function where the  compiler replaces the  function call with the actual function  code during the compliation  phase.
+
+this reduce the function call overhead and  make the code faster for small functions .
+
+*/
+
+#include <iostream>
+using namespace std;
+
+inline int square(int x)
+{
+    return x*x;
+}
+int  main()
+{
+    int  num =6; 
+    cout<<"value of square of  "<<num<<" is : "<<square(num)<<endl;
+    return 0; 
+}
