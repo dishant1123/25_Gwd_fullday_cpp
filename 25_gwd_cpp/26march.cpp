@@ -159,7 +159,7 @@ int  main()
 */ 
 
 // ex :6 structure + array  +pointer  function  :
-
+/*
 #include <iostream>
 using namespace std;
 struct student 
@@ -187,4 +187,59 @@ int  main()
 
     display(s,2); 
     return 0;
+}
+*/ 
+
+// using class object : 
+
+#include <iostream>
+using namespace std;
+class student 
+{
+    public : 
+        int id; 
+        string name;
+        float marks; 
+    student(int id, string name, float marks)
+    {
+        this->id = id;
+        this->name = name;
+        this->marks = marks;
+    }
+    void display()
+    {
+        cout<<"id is  : "<<this->id<<endl;
+        cout<<"name is : "<<this->name<<endl;
+        cout<<"marks is : "<<this->marks<<endl;
+    }
+};
+
+void updatemarks(student *s, int n)
+{
+    for(int i=0; i<n; i++)
+    {
+        (s+i)->marks+=5;
+    }
+}
+void show(student *s, int n)
+{
+    for(int i=0; i<n; i++)
+    {
+        (s+i)->display();
+    }
+}
+int main()
+{
+    student s[2] ={
+        student(1,"rano",78),
+        student(2,"rani",98)
+    };
+    cout<<"before update : "<<endl;
+    show(s,2);
+
+    cout<<"after update : "<<endl;
+    updatemarks(s,2);
+
+    show(s,2);
+    return 0; 
 }
