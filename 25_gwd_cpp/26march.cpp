@@ -102,7 +102,7 @@ int  main()
 */ 
 
 // ex :4  pointer with  array  : 
-
+/*
 #include <iostream>
 using namespace std;
 int main()
@@ -121,7 +121,7 @@ int main()
     }
     return 0 ; 
 }
-
+*/ 
 /*
 
 task  :1  using  pointer  with array index 3 value  update. after  array print. 
@@ -135,3 +135,56 @@ index :3  value  :99
 
 after update  : {12,45,67,99,23}
 */
+
+// ex :5  pointer  with structure  : 
+/*
+#include <iostream>
+using namespace std;
+struct student 
+{
+    int id; 
+    string name; 
+}; 
+
+int  main()
+{
+    student s1={12,"john"};
+    student *p = &s1; 
+
+    cout<<"id is  : "<<p->id<<endl;   // 12
+    cout<<"name is : "<<p->name<<endl;   // john
+
+    return 0; 
+}
+*/ 
+
+// ex :6 structure + array  +pointer  function  :
+
+#include <iostream>
+using namespace std;
+struct student 
+{
+    int  id; 
+    string name; 
+    float marks; 
+}; 
+
+void display(student *s, int n)
+{
+    for(int i=0; i<n; i++)
+    {
+        cout<<"id is  : "<<(s+i)->id<<endl;
+        cout<<"name is : "<<(s+i)->name<<endl;
+        cout<<"marks is : "<<(s+i)->marks<<endl;
+    }
+}
+int  main()
+{
+    student s[2]={
+        {1,"rano",78},
+        {2,"rani",98}
+    };
+
+    display(s,2); 
+    return 0;
+}
